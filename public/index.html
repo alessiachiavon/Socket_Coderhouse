@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+<body>
+    <h1>Ingrese productos</h1>
+    <form id="formProductos">
+        <div class="form-group">
+            <label for="nombre">Nombre del producto</label>
+            <input id="nombre" class="form-control" type="text" name="title" required>
+        </div>
+        <button>Enviar</button>
+
+    </form>
+
+    <div id="productList"></div>
+
+    <div >
+        <h1>Centro de Mensajes</h1>
+        <br>
+
+        <input type="text" id="inputUsername" placeholder="Ingresá tu email">
+
+        <hr>
+
+        <div id="mensajes"></div>
+
+        <form id="formPublicarMensaje" class="form-inline" autocomplete="off">
+            <div class="form-group">
+                <input id="inputMensaje" type="text" placeholder="Ingresá un mensaje...">
+                <button id="btnEnviar" type="submit">Enviar!</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+
+</body>
+</html>

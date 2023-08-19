@@ -6,6 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Nuevo Producto</h1>
+    <input type="text" id="mensaje" placeholder="Nombre del producto">
+    <button id="btn-send" onclick="enviarMensaje()">Enviar</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io()
+
+        function enviarMensaje() {
+            const mensaje = document.getElementById("mensaje").value;
+            socket.emit("mensaje", mensaje);
+        }
+
+        const boton = document.getElementById("btn-send");
+        boton.addEventListener("click", () => {
+            console.log("Clic en el boton")
+        })
+
+        socket.on("mensaje", (data) => {
+            console.log(`Mensaje recibido desde el servidor: ${data}`)
+        })
+    </script>
+
 </body>
 </html>
